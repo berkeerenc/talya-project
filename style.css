@@ -578,19 +578,19 @@ html, body {
 .card2.card-move {
   opacity: 0;
   transform: translateY(-40px) scale(0.98);
-  animation: cardFadeIn 1.1s cubic-bezier(.6,.2,.2,1) 2.3s forwards;
+  animation: cardFadeIn 0.3s cubic-bezier(.6,.2,.2,1) 2.3s forwards;
 } 
 
 .card1.card-move h2, .card1.card-move p, .card1.card-move .desc {
   opacity: 0;
   transform: translateY(24px);
-  animation: contentFadeIn 0.7s cubic-bezier(.6,.2,.2,1) 1.6s forwards;
+  animation: contentFadeIn 0.3s cubic-bezier(.6,.2,.2,1) 1.6s forwards;
 }
 
 .card2.card-move h2, .card2.card-move p, .card2.card-move .desc {
   opacity: 0;
   transform: translateY(24px);
-  animation: contentFadeIn 0.7s cubic-bezier(.6,.2,.2,1) 2.3s forwards;
+  animation: contentFadeIn 0.3s cubic-bezier(.6,.2,.2,1) 2.3s forwards;
 }
 
 @keyframes contentFadeIn {
