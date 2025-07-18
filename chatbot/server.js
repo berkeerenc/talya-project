@@ -24,7 +24,7 @@ app.post('/chat', async (req, res) => {
     const response = await axios.post(
       'http://localhost:11434/api/generate',
       {
-        model: 'tinyllama',
+        model: 'llama3',
         prompt: `You are a helpful chatbot. Answer the following question clearly:\n\n${userMessage}`,
         stream: false
       },

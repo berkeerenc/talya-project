@@ -7,6 +7,8 @@ const chatHistoryList = document.getElementById('chat-history');
 const newChatBtn = document.getElementById('new-chat');
 const chatForm = document.getElementById('chat-form');
 const userInput = document.getElementById('user-input');
+const sidebar = document.getElementById('sidebar');
+const sidebarToggle = document.getElementById('sidebar-toggle');
 
 function saveChats() {
   localStorage.setItem('chats', JSON.stringify(chats));
@@ -94,10 +96,22 @@ newChatBtn.addEventListener('click', () => {
   userInput.focus();
 });
 
+sidebarToggle.addEventListener('click', () => {
+  sidebar.classList.toggle('collapsed');
+  document.body.classList.toggle('menu-open', !sidebar.classList.contains('collapsed'));
+});
+
 // İlk yüklemede sohbet geçmişini ve aktif sohbeti göster
 if (chats.length === 0) {
   createChat();
 } else {
   renderChatHistory();
   renderActiveChat();
+}
+
+// Sayfa ilk açıldığında sidebar'ın durumuna göre body'ye menu-open class'ı ekle
+if (!sidebar.classList.contains('collapsed')) {
+  document.body.classList.add('menu-open');
+} else {
+  document.body.classList.remove('menu-open');
 }

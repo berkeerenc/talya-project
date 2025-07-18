@@ -9,6 +9,7 @@ body {
 .main-container {
   display: flex;
   height: 100vh;
+  position: relative;
 }
 
 .sidebar {
@@ -17,6 +18,15 @@ body {
   display: flex;
   flex-direction: column;
   border-right: 1px solid #22242c;
+  transition: width 0.3s cubic-bezier(.4,2,.6,1), min-width 0.3s cubic-bezier(.4,2,.6,1);
+  min-width: 280px;
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+  width: 0;
+  min-width: 0;
+  border-right: none;
 }
 
 .sidebar-header {
@@ -25,6 +35,60 @@ body {
   justify-content: space-between;
   padding: 20px 16px 10px 16px;
   border-bottom: 1px solid #22242c;
+  gap: 8px;
+}
+
+/* Menü düğmesi için modern görünüm ve animasyon */
+#sidebar-toggle {
+  position: fixed;
+  top: 24px;
+  left: 32px;
+  z-index: 1001;
+  background: #232634;
+  border: 2px solid #7ec7ff;
+  color: #7ec7ff;
+  font-size: 1.7rem;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 8px 18px;
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s, background 0.2s, border 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+#sidebar-toggle:hover {
+  background: #2a2e3a;
+  border-color: #4fa3e3;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+}
+
+/* Menü açıkken buton ve sidebar birlikte kayar */
+.menu-open #sidebar-toggle {
+  left: 280px;
+}
+.menu-open .sidebar {
+  /* sidebar zaten açık, ekstra bir şey gerekmez */
+}
+
+/* Sidebar kapalıyken buton sola döner */
+.sidebar.collapsed + .chat-section {
+  /* chat-section sola genişler, buton sabit kalır */
+}
+
+/* Responsive için düzeltme */
+@media (max-width: 700px) {
+  #sidebar-toggle {
+    left: 20px;
+    top: 20px;
+    transform: none !important;
+  }
+  .menu-open #sidebar-toggle {
+    transform: none !important;
+  }
+}
+
+.sidebar.collapsed .sidebar-header h2,
+.sidebar.collapsed .sidebar-header #new-chat,
+.sidebar.collapsed .chat-history {
+  display: none;
 }
 
 .sidebar-header h2 {
@@ -42,6 +106,9 @@ body {
   cursor: pointer;
   font-size: 1rem;
   transition: background 0.2s;
+  bottom: 28px;
+  left: 28px;
+  position: absolute;
 }
 #new-chat:hover {
   background: #2a2e3a;
