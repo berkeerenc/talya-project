@@ -656,15 +656,19 @@ html, body {
 }
 
 .contributors-list a {
-  color: #90caf9;
+  color: #ffe082; /* daha sıcak bir sarı tonu */
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .contributors-list a:hover {
-  color: #fff;
-  text-shadow: 0 0 4px #90caf9;
+  color: #ffc107; /* daha parlak sarı */
+  text-shadow: 0 0 6px #ffc107;
+}
+
+.contributors-list a:visited {
+  color: #ffe082; /* ziyaret edilse bile aynı renk */
 }
 
 .owner {
