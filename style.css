@@ -345,6 +345,10 @@ body::before {
 .live-btn i {
   font-size: 1.2em;
 }
+.github-btn:visited,
+.live-btn:visited {
+  color: #222;
+}
 
 @media (max-width: 900px) {
   .glass-card {
