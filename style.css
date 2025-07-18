@@ -603,3 +603,77 @@ html, body {
     transform: translateY(0);
   }
 } 
+
+/* contributers section  */
+.contributors-section {
+  width: 100%;
+  max-width: 720px;
+  background: linear-gradient(135deg, rgba(30, 32, 40, 0.15), rgba(45, 48, 60, 0.25));
+  border-radius: 28px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 36px 40px;
+  margin: 48px auto;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  position: relative;
+  z-index: 2;
+}
+
+.contributors-section h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffe082;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.contributors-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contributors-list li {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  position: relative;
+  padding-left: 16px;
+}
+
+.contributors-list li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 1rem;
+  color: #ffc107;
+}
+
+.contributors-list a {
+  color: #90caf9;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.contributors-list a:hover {
+  color: #fff;
+  text-shadow: 0 0 4px #90caf9;
+}
+
+.owner {
+  font-weight: 600;
+  color: #fff;
+}
+
+.role {
+  font-style: italic;
+  color: #bdbdbd;
+  font-size: 0.95rem;
+}
